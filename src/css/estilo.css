@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+#container{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #222222;
+    --color1: #2d2d2d;
+    --color2: #373737;
+    --color3: #535353;
+    --color4: #939393;
+    --color5: #ffffff;
+    --color6: #3cf860;
+    --color7: #27a639;
+    --color8: #1c6b27;
+    --color9: #5c8d92;
+    --color10: #8dc63f;
+    --color11: #344f52;
+    --color12: #005610;
+    --inter: Inter Tight;
+    --bbh: "BBH Sans Bogle", "sans-serif";
+}
+
+header {
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+#nome-mp{
+    font-family: var(--bbh);
+    position: absolute;
+    color: var(--color5);
+    left: 130px;
+    font-size: 1.8rem;
+    top: 37px;
+    font-weight: 400;
+}
+
+#logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;
+    left: 30px;
+    top: 10px;
+    z-index: 2;
+    position: absolute;
+}
+
+header nav {
+    justify-content: center;
+    padding: 25px;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu {
+    color: var(--color5);
+    font-size: 1.5rem;
+    padding: 10px;
+    text-decoration: none;
+    transition: ease;
+    font-family: var(--inter);
+}
+
+.menu:hover {
+    text-shadow: 2px 3px 2px var(--color3);
+}
+
+.menu-header {
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+
+.menu-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color6);
+}
+
+.menu-header:hover::after {
+    transition: width 0.5s ease;
+    width: 100%;
+}
+
+.menu-header:hover {
+    transform: scale(1.05);
+    border-radius: 15%;
+}
+#carrinho{
+    display: flex;
+    position: relative;
+    top: 5px;
+    right: -100%;
+}
+#contador-carrinho{
+    font-size: 1.5rem;
+    font-family: var(--inter);
+    position: relative;
+    top: 8px;
+    right: 15px;
+    transition: font-size 0.3s ease, color 0.3s ease; 
+    color: var(--color5);
+}
+#contador-carrinho.pulse{
+    font-size: 1.9rem;
+}
+#logo-carrinho{
+    width: 50px;
+}
+
+#banner {
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 30px #1c6b27b2;
+    z-index: 1;
+    background-repeat: no-repeat; 
+    transition: background-image 0.5s ease-in-out;
+}
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+#banner-conteudo{
+    color: #fff;
+    z-index: 3;
+    text-align: center;
+    font-family: var(--inter);
+}
+#banner-conteudo h2{
+    padding-bottom: 10px;
+    font-size: 2rem;
+}
+#banner-conteudo h3{
+    font-size: 3rem;
+    padding-bottom: 25px;
+}
+#banner-conteudo p{
+    font-size: 1.2rem;
+}
+.btn-ban {
+    position: absolute;
+    top: 50%;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    box-shadow: 0 0 50px var(--color3);
+    transition: transform 0.3s ease;
+    z-index: 2;
+    display: block;
+}
+.btn-ban:hover{
+    transform: scale(1.2);
+}
+
+.btn-anterior {
+    left: 2.5%;
+}
+
+.btn-proximo {
+    right: 2.5%;
+}
+
+#conteudo {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+main {
+    justify-content: center;
+}
+
+#titulo-compra {
+    background: var(--background);
+    text-align: center;
+    color: var(--color5);
+    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--roxoescuro);
+    text-underline-offset: 30px;
+    font-family: var(--inter);
+    font-weight: 500;
+}
+
+#compra {
+    display: flex;
+    padding: 10px;
+    background: var(--background);
+    justify-content: center;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.produto {
+    width: 300px;
+    height: 950px;
+    border-radius: 20px;
+    background: var(--background);
+    margin: 50px;
+    padding: 20px;
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    box-shadow: 0 0 20px 2px rgba(29, 165, 165, 0.5);
+    font-family: var(--inter);
+    color: var(--color5);
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+.nome-do-plano{
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color6);
+    text-underline-offset: 8px;
+    padding: 5px;
+    padding-bottom: 15px;
+}
+
+.recurso-anterior{
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 25px;
+}
+
+.produto p {
+    text-align: center;
+    color: var(--roxoescuro2);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.preco {
+    color: var(--roxo);
+    margin: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.produto hr{
+    width: 85%;
+    height: 1px;
+    border: none;
+    background: var(--color6);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.botao-compra {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    background: linear-gradient(to right, var(--color7), var(--color10));
+    color: var(--background2);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: transform 0.2s ease;
+    font-family: var(--inter);
+}
+
+.botao-compra:hover{
+    background: var(--color5);
+    color: var(--color7);
+    transform: scale(1.2);
+}
+.btn-comp{
+    position: absolute;
+    top: 40%;
+    border: none;
+    background: var(--roxo);
+    color: var(--background2);
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    box-shadow: 0 0 40px var(--roxoescuro3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+#btn-proximo-cmp{
+    right: 1%;
+}
+#btn-anterior-cmp{
+    left: 1%;
+}
+#titulo-sobre{
+    background: var(--background);
+    text-align: center;
+    color: var(--color5);
+    font-family: var(--inter);
+    padding-top: 100px;
+    padding-bottom: 90px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color7);
+    text-underline-offset: 30px;
+    font-weight: 500;
+}
+#sobre{
+    background: var(--background);
+    display: flex;
+    font-family: var(--inter);
+    padding-top: 10px;
+    padding-bottom: 80px;
+
+}
+#titulo-historia{
+    position: relative;
+    left: 90px;
+    font-size: 2.2rem;
+    color: var(--color5);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 20px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color7);
+}
+#sobre p{
+    position: relative;
+    color: var(--color5);
+    font-size: 1.6rem;
+    top: 150px;
+    padding: 15px;
+    margin-bottom: 300px;
+}
+footer{
+    background: var(--background);
+    text-align: center;
+    font-family: var(--inter);
+    box-shadow: 0 0 40px var(--color3);
+    position: relative;
+}
+#contato{
+    padding: 30px;
+    padding-top: 40px;
+    font-size: 1.1rem;
+    color: var(--color5);
+}
+#imgs-contato{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+#github-contato{
+    margin-right: 15px;
+}
+#github-contato img{
+    width: 37px;
+    transition: transform 0.3s ease;
+}
+#github-contato img:hover{
+    transform: translateY(-10px);
+}
+#linkedin-contato img{
+    width: 35px;
+    transition: transform 0.3s ease;
+}
+#linkedin-contato img:hover{
+    transform: translateY(-10px);
+}
+footer hr{
+    width: 85%;
+    height: 2px;
+    border: none;
+    background: var(--color6);
+    margin: 0 auto;
+}
+#direitos{
+    color: var(--color5);
+    padding: 30px;
+}
+@media (width >= 1024px){
+    .btn-comp{
+        display: none;
+    }
+}
+@media (width <= 1024px){
+    #conteudo{
+        display: flex;
+        justify-content: center;
+    }
+    #cabecalho{
+        width: 100vw;
+        padding-bottom: 20px;
+    }
+    #logo{
+        top: 15px;
+        width: 40px;
+        height: 40px;
+        left: 25px;
+    }
+    #nome-mp{
+        display: none;
+    }
+    header nav{
+        padding: 5px;
+        padding-left: 30px;
+    }
+    header nav ul{
+        justify-content: center;
+    }
+    .menu{
+        font-size: 1.5rem;
+        padding: 5px;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    .menu-header{
+        font-size: 1.4rem;
+    }
+    #contador-carrinho{
+        top: 4px;
+        font-size: 1.1rem;
+        right: 10px;
+    }
+    #carrinho{
+        top: 12px;
+        right: -15%;
+    }
+    #logo-carrinho{
+        width: 30px;
+        height: 30px;
+    }
+
+    #banner{
+        height: 250px;
+        width: 100vw;
+    }
+    #banner-conteudo h2{
+        font-size: 1rem;
+    }
+    #banner-conteudo h3{
+        font-size: 1.4rem;
+    }
+    #banner-conteudo p{
+        font-size: 1rem;
+    }
+    .btn-ban{
+        width: 50px;
+        height: 50px;
+        font-size: 1.8rem;
+        display: none ;
+        position: absolute;
+    }
+    .btn-anterior{
+        left: 2%;
+    }
+    .btn-proximo{
+        right: 2%;
+    }
+    #titulo-compra{
+        padding: 50px;
+    }
+    #compra{
+        width: 100vw;
+    }
+    .produto{
+        width: 100%;
+        height: 100%;
+    }
+    .produto:hover{
+        transform: none;
+    }
+    .produto img{
+        width: 90%;
+        position: relative;
+        left: 5px;
+        margin-top: 2.5px;
+    }
+    .produto h3{
+        font-size: 1rem;
+    }
+    .preco{
+        font-size: 1.2rem;
+    }
+    .btn-comp{
+        position: absolute;
+        z-index: 2;
+        background: transparent;
+        color: #fff;
+        box-shadow: 0 0 25px var(--color3);
+    }
+    .botao-compra{
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    #titulo-sobre{
+        padding-top: 10px;
+    }
+    #sobre{
+        display: block;
+        width: 100vw;
+    }
+    #sobre p{
+        margin: 0 auto;
+        font-size: 1.3rem;
+        display: flex;
+        width: 400px;
+        flex-wrap: wrap;
+        top: 45px;
+        padding-bottom: 100px ;
+        text-align: justify;
+    }
+    #titulo-historia{
+        text-align: center;
+        left: 0;
+        right: 0;
+    }
+    #sobre img{
+        display: none;
+    }
+}
